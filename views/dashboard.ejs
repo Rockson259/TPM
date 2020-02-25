@@ -1,0 +1,120 @@
+<!Doctype html>
+<html>
+<head>
+    <title>TPM || Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+<br>
+    <img src="/logo1.png">
+    <!--<h2 align="center">National Identification Authority</h2>-->
+        <br><br>
+
+    <form class="form-group" method="get" action="/dashboard" style="float: right;">
+        <label for="usr" >Search User:</label>
+        <input name="search_query"  value="<%-search_query%>" type="text" class="form-control" id="usr" style="width: 400px;">
+    </form>
+        <br><br><br><br><br>
+
+    <h4 style="color: #1fa80a" align="center">Electoral Commission</h4>
+    <table class="table table-striped">
+        <thead>
+        <tr style="color: #1fa80a">
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Nationality</th>
+            <th>Gender</th>
+            <th>Telephone</th>
+            <th>Voters ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% ecData.forEach(person => { %>
+        <tr>
+            <td><%- person.id %></td>
+            <td><%- person.full_name %></td>
+            <td><%- person.dob %></td>
+            <td><%- person.nationality %></td>
+            <td><%- person.gender %></td>
+            <td><%- person.telephone %></td>
+            <td><%-person.voters_id%></td>
+        </tr>
+        <% }) %>
+
+        </tbody>
+    </table>
+    <br/>
+
+
+    <h4 style="color: #0000FF" align="center">Immigration Service  Data</h4>
+    <table class="table table-striped">
+        <thead>
+        <tr style="color: #0000FF">
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Nationality</th>
+            <th>Gender</th>
+            <th>Telephone</th>
+            <th>Passport No</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <% iData.forEach(person => { %>
+            <tr>
+                <td><%- person.id %></td>
+                <td><%- person.full_name %></td>
+                <td><%- person.dob %></td>
+                <td><%- person.nationality %></td>
+                <td><%- person.gender %></td>
+                <td><%- person.telephone %></td>
+                <td><%- person.passport_no %></td>
+            </tr>
+        <% }) %>
+
+        </tbody>
+    </table>
+        <br>
+
+<h4 style="color: #9a0200" align="center">DVLA Data</h4>
+<table class="table table-striped">
+    <thead>
+    <tr style="color: #9a0200">
+        <th>Id</th>
+        <th>Full Name</th>
+        <th>Date of Birth</th>
+        <th>Nationality</th>
+        <th>Gender</th>
+        <th>Telephone</th>
+        <th>License No</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <% dvlaData.forEach(person => { %>
+    <tr>
+        <td><%- person.id %></td>
+        <td><%- person.full_name %></td>
+        <td><%- person.dob %></td>
+        <td><%- person.nationality %></td>
+        <td><%- person.gender %></td>
+        <td><%- person.telephone %></td>
+        <td><%- person.license_no%></td>
+    </tr>
+    <% }) %>
+
+    </tbody>
+</table>
+<br>
+
+
+</div>
+
+</body>
+</html>
